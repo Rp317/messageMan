@@ -43,6 +43,7 @@ async function signUp() {
 						for (const element of prompt2) {
 							let isTrue1 = false
   						if(lowerLetters.includes(element)) {
+						console.log(element)
      						isTrue1 = true
 				 				break;
 						} 
