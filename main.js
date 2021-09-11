@@ -1,5 +1,4 @@
-// set this up 
-
+// set this up bitch
 const lowerLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 const higherLetters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -38,26 +37,23 @@ async function signUp() {
 		console.log("\x1b[39m%s\x1b[0m", "*Must be more than 10 charecters!*");
 		console.log("\x1b[36m%s\x1b[0m", "Please use at least one uppercase, lowercase, number and symbol charecters!");
 		let prompt2 = prompt('Password?: ');
-
 		while(abc < 2) {
-					function check1() {
-						for (const element of prompt2) {
-							let isTrue1 = false
-  						if(lowerLetters.includes(element)) {
-						console.log(element)
-     						isTrue1 = true
-				 				break;
+				async function check1() {
+					for (const element of prompt2) {
+  					if(lowerLetters.includes(element)) {
+							console.log(element)
+							.then(prompt2 = prompt('Password?: '));
+				 			break;
 						} 
-    			}}
+    			}
+					}
 				if (prompt2.length < 10) {
 					console.log("please make your password longer!");
 					prompt2 = prompt('Password?: ');
     		}
-				if (isTrue1 = true) {
-					console.log('pog')
-					prompt2 = prompt('Password?: ');
-				}
-		}}
+				check1()
+		}
+		}
 
 if (username == '' || password == '') {
 	signUp();
