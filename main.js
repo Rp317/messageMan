@@ -2,7 +2,7 @@
 const lowerLetters = ["a","b","c","d","e","f","g","h","i", "j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 const higherLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M",
 "N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 const symbols = ["`","~","!","@","#","$","%","^","&","*","(",")","-","_","=","+","[","]","{","}","|",":",";",",","<",">",".","/","?"];
 const split = [];
 const prompt = require("prompt-sync")({ sigint: true });
@@ -47,25 +47,27 @@ async function signUp() {
     "Please use at least one uppercase, lowercase, number and symbol charecters!"
   );
   let prompt2 = prompt("Password?: ");
-  let completion = false;
+  let completion1 = false;
   while (isComplete < 2) {
     async function check1() {
       for (const element of prompt2) {
         if (lowerLetters.includes(element)) {
-          console.log(element);
-          completion = true;
+					console.log(element);
+          completion1 = true;
+					
           prompt2 = prompt("Password?: ");
           break;
         }
       }
     }
     check1();
+
     if (prompt2.length < 10) {
       console.log("please make your password longer!");
       prompt2 = prompt("Password?: ");
     }
-    if (completion = true) {
-      console.log("pog");
+    if (completion1 === true && 'blah') {
+      console.log('pog')
     } else {
       console.log("eh");
     }
@@ -75,4 +77,6 @@ async function signUp() {
 
 if (username == "" || password == "") {
   signUp();
+} else {
+	console.log('log in?')
 }
