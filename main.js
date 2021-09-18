@@ -45,41 +45,62 @@ async function signUp() {
 	console.log("\x1b[39m%s\x1b[0m", "*Must be more than 10 charecters!*");
 	console.log(
 		"\x1b[36m%s\x1b[0m",
-		"Please use at least one uppercase, lowercase, number and symbol charecters! *infdev*"
+		"Please use at least one uppercase, lowercase, number and symbol charecters!"
 	);
 	//Really you could be reducing a lot of duplication with better use of objects and arrays, so you can loop (or even make use of functions like .every())
-	let completion1 = false;
 	let prompt2 = prompt("Password?: ");
-	for (const stringg of prompt2) {
-		prompt20.push(stringg)
-	}
-	async function check1() {
-		while (completion1 === false) {
-			if (lowerLetters.every(prompt20)) {
-				return doSomething.then(smh => {
-					if (higherLetters.every(prompt20)) {
-						completion1 = true;
-					} else {
-						console.log('please add a uppercase letter!')
-					}
-				})
-			} else {
-			console.log('please add a lowercase letter!')
-			}
-		}}
-	
-	check1()
-	while (isComplete < 2)
+	step1()
+	function step1() {
+	for(const element of prompt2) {
+		if(lowerLetters.includes(element)) {
+			console.log('pog')
+			step2()
+			break;
+		} else {
+			console.log('no')
+			break;
+		}
+	}}
+	function step2() {
+	for(const element of prompt2) {
+		if(higherLetters.includes(element)) {
+			console.log('pog')
+			step3()
+			break;
+		} else {
+			console.log('no')
+			break;
+		}
+	}}
+	function step3() {
+	for(const element of prompt2) {
+		if(numbers.includes(element)) {
+			console.log('pog')
+			step4()
+			break;
+		} else {
+			console.log('no')
+			break;
+		}
+	}}
+	function step4() {
+	for(const element of prompt2) {
+		if(symbols.includes(element)) {
+			console.log('pog')
+			break;
+		} else {
+			console.log('no')
+			break;
+		}
+	}}
+	while (isComplete < 2) {
 		if (prompt2.length < 10) {
 			console.log("please make your password longer!");
 			prompt2 = prompt("Password?: ");
+		} else {
+				isComplete = isComplete + 1;
 		}
-	if (completion1 === true) {
-		console.log('pog')
-	} else {
-		console.log("eh");
 	}
-	isComplete = isComplete + 1;
 }
 
 if (username == "" || password == "") {
