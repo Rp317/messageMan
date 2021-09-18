@@ -44,29 +44,41 @@ async function signUp() {
   console.log("\x1b[39m%s\x1b[0m", "*Must be more than 10 charecters!*");
   console.log(
     "\x1b[36m%s\x1b[0m",
-    "Please use at least one uppercase, lowercase, number and symbol charecters!"
+    "Please use at least one uppercase, lowercase, number and symbol charecters! *infdev*"
   );
+	//nested loop
   let prompt2 = prompt("Password?: ");
   let completion1 = false;
+	let completion2 = false;
+	let completion3 = false;
+	let completion4 = false;
+	let completion5 = false;
   while (isComplete < 2) {
     async function check1() {
       for (const element of prompt2) {
         if (lowerLetters.includes(element)) {
-					console.log(element);
-          completion1 = true;
-					
-          prompt2 = prompt("Password?: ");
-          break;
-        }
-      }
-    }
+					console.log(element)
+					completion2 = true
+        } else if (higherLetters.includes(element)) {
+					console.log(element)
+					completion3 = true
+				} else if (numbers.includes(element)) {
+					console.log(element)
+					completion4 = true
+				} else if (symbols.includes(element)) {
+					console.log(element)
+					completion5 = true
+				} else {
+					completion1 = true;
+				}
+      }}
     check1();
 
     if (prompt2.length < 10) {
       console.log("please make your password longer!");
       prompt2 = prompt("Password?: ");
     }
-    if (completion1 === true && 'blah') {
+    if (completion1 === true) {
       console.log('pog')
     } else {
       console.log("eh");
