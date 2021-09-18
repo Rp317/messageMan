@@ -54,7 +54,7 @@ async function signUp() {
 		prompt20.push(stringg)
 	}
 	async function check1() {
-		while (completion1 = false) {
+		while (completion1 === false) {
 			if (lowerLetters.every(prompt20)) {
 				return doSomething.then(smh => {
 					if (higherLetters.every(prompt20)) {
