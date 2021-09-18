@@ -49,7 +49,6 @@ async function signUp() {
 	);
 	//Really you could be reducing a lot of duplication with better use of objects and arrays, so you can loop (or even make use of functions like .every())
 	let prompt2 = prompt("Password?: ");
-	step1()
 	function step1() {
 	for(const element of prompt2) {
 		if(lowerLetters.includes(element)) {
@@ -93,6 +92,7 @@ async function signUp() {
 			break;
 		}
 	}}
+	step1()
 	while (isComplete < 2) {
 		if (prompt2.length < 10) {
 			console.log("please make your password longer!");
