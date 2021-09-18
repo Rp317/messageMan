@@ -56,16 +56,16 @@ async function signUp() {
   while (isComplete < 2) {
     async function check1() {
       for (const element of prompt2) {
-        if (lowerLetters.includes(element)) {
+        if (!lowerLetters.includes(element)) {
 					console.log(element)
 					completion2 = true
-        } else if (higherLetters.includes(element)) {
+        } else if (!higherLetters.includes(element)) {
 					console.log(element)
 					completion3 = true
-				} else if (numbers.includes(element)) {
+				} else if (!numbers.includes(element)) {
 					console.log(element)
 					completion4 = true
-				} else if (symbols.includes(element)) {
+				} else if (!symbols.includes(element)) {
 					console.log(element)
 					completion5 = true
 				} else {
