@@ -85,7 +85,6 @@ async function signUp() {
 	while(ab = false) {
 		Promise.all([check1, check2, check3, check4])
 		.then(function(data){console.log('done!')})
-		.then(ab = true)
  		.catch(function(err){console.error(err)});
 	}
 	while (isComplete < 2) {
